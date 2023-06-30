@@ -1,0 +1,224 @@
+@font-face {
+    font-family: "EOTG";
+    src: url("../resources/fonts/EOTG/EdgeOfTheGalaxyRegular-OVEa6.otf");
+}
+@font-face {
+    font-family: "Quicksand";
+    src: url("../resources/fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: "Quicksand bold";
+    src: url("../resources/fonts/Quicksand/Quicksand-Bold.ttf");
+}
+strong {
+    font-family: 'Quicksand bold', 'Courier New', Courier, monospace;
+}
+
+:root {
+    font-family: Quicksand, 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../resources/images/pageBG.jpeg");
+    background-position: center;
+    background-repeat:initial;
+    background-size: cover;
+}
+
+.container {
+    animation: 1s ease-out 0s 1 fadeIn;
+    width: 900px;
+    height: 600px;
+    /* border: 5px solid red; */
+    background-color: lightgray;
+
+    display: flex;
+}
+
+.container>* {
+    min-height: 100%;
+    width: 100%;
+    flex: auto;
+}
+
+#banner {
+    font-family: EOTG, 'Courier New', Courier, monospace;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../resources/images/background.jpeg");
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+
+    width: 80%;
+}
+
+#miniHero {
+    font-size: 150%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 16px;
+
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+#logo {
+    max-width: 75px;
+    max-height: 75px;
+}
+
+#formContainer {
+    padding-top: 5%;
+    font-size: 60%;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+}
+
+#formContainer h1 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+form {
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+    
+}
+
+.formContent {
+    background-color: white;
+    padding: 16px 24px;
+
+    box-shadow: 0px 3px 3px #888888;
+}
+#inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.formInput {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+input {
+    transition: all ease 0.25s;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: rgb(133, 133, 133);
+    background-color: white;
+}
+input:invalid {
+    background-color: rgb(248, 213, 213);
+    border-color: red;
+}
+input:placeholder-shown {
+    border-color: rgb(133, 133, 133);
+    background-color: white;
+}
+
+input:valid {
+    border-color: green;
+    background-color: rgb(219, 251, 219);
+}
+
+input:focus {
+    border-color: rgb(133, 133, 133);
+    background-color: white;
+}
+
+::placeholder {
+    color: lightgray;
+    font-size: 80%;
+    padding-left: 4px;
+}
+
+.error {
+    color: red;
+    transform-origin: center top;
+    animation: append-animate .1s linear;
+}
+.valid {
+    color: green;
+    transform-origin: center top;
+    animation: append-animate .1s linear;
+}
+
+#submit {
+    position: relative;
+    right: -5%;
+}
+#submit button {
+    color: white;
+    background-color: rgb(46, 46, 123);
+
+    border-style: none;
+    border-radius: 10px;
+    
+    padding: 8px;
+}
+#submit button:hover {
+    background-color: rgb(35, 35, 96);
+}
+#submit button:active {
+    background-color: rgb(26, 26, 70);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+      transform: translateY(5%);
+    }
+    100% {
+        opacity: 100%;
+      transform: translateY(0);
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+    #banner {
+        width: 100%;
+    }
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+
+  html,
+  body{
+    width:100%;
+    overflow-x:hidden;
+  }
+
+}
+@keyframes append-animate {
+	from {
+        transform: scaleY(0%);
+		opacity: 0;
+	}
+	to {
+        transform: scaleY(100%);
+		opacity: 1;	
+	}
+}
